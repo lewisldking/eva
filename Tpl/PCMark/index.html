@@ -1,0 +1,104 @@
+<load href="__JS__/pcmark_index.js"/>
+<div id="box-left-tabs" class="box box-padding">
+    <!-- box / title -->
+    <div class="title">
+        <h5>PCMark结果</h5>
+        <ul class="links" id="link_list">
+            <li class="head_tab_select ui-tabs-selected" t="1"><a>PCMark结果展示</a></li>
+            <li class="head_tab_select" t="2"><a href="javascript:void(0);">上传PCMark干净系统结果</a></li>
+        </ul>
+    </div>
+    <!-- end box / title -->
+    <div class="table" id="result_list" style="display: block;">
+        <div align="center">
+            <table style="width:100%;margin:5px;border-collapse:collapse;border:none;border: 1px;">
+                <tr>
+                    <th style="width: 50%">测试版本结果</th>
+                    <th style="width: 50%">干净系统结果</th>
+                </tr>
+                <tr>
+                    <td>
+                        <p>
+                            <label style="margin-left: 10px;">评测类型:</label>
+                            <select name="evaluate_type" id="evaluate_type">
+                                <option value="AVC_OEM" selected="selected">AVC_OEM</option>
+                                <option value="AVC_SelfPower">AVC_SelfPower</option>
+                            </select>
+                            <label style="margin-left: 10px;">测试系统:</label>
+                            <select name="os_type" id="os_type">
+                            </select>
+                        </p>
+                        <p>
+                            <label style="margin-left: 10px;">对比版本:</label>
+                            <select name="test_result" id="test_result">
+                            </select>
+                        </p>
+                        <p>
+                            <label style="margin-left: 10px;">测试日期:</label>
+                            <select name="test_date" id="test_date">
+                            </select>
+                            <input type="button" class="search_btn" id="compare_btn" value="显示对比结果"
+                                   style="margin-left: 20px;">
+                        </p>
+                    </td>
+                    <td>
+                        <div style="margin-left: 20%;">
+                            <p>
+                                <label style="margin-left: 10px;" for="os_clean">测试系统:</label>
+                                <select name="os_clean" id="os_clean">
+                                </select>
+                            </p>
+                            <p>
+                                <label style="margin-left: 10px;" for="os_clean">结果上传时间:</label>
+                                <select name="date_clean" id="date_clean">
+                                </select>
+                            </p>
+                        </div>
+                        <p align="center">
+                            <input type="button" class="search_btn" id="set_btn" value="设为默认"
+                                   style="margin-left: 10px;">
+                            <input type="button" class="search_btn" id="view_btn" value="预览结果"
+                                   style="margin-left: 10px;">
+                        </p>
+
+                        <p align="center">
+                        <div id="setDefault"></div>
+                        </p>
+
+                    </td>
+                </tr>
+            </table>
+
+
+            <div id="result_table"></div>
+        </div>
+    </div>
+    <div class="table" id="clean_result" style="display: none;">
+        <div align="center">
+            <form method="post" action="__APP__/PCMResults/uploadCleanSysResults" enctype="multipart/form-data">
+                <table style="width:600px;margin:5px;border-collapse:collapse;border:none;border: 1px;">
+                    <tr>
+                        <th>上传干净系统的测试结果</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="mid" style="padding-left: 20px;">测试系统环境</label>
+                            <select id="mid" name="mid"></select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="file" style="padding-left: 20px;">测试结果文件Xml(final)</label>
+                            <input type="file" name="file" id="file" accept="text/xml"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center">
+                            <input type="submit" id="uploadCleanResult_btn" value="上传结果文件"/>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</div>

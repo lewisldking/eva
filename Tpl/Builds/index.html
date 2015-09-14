@@ -1,0 +1,41 @@
+<load href="__JS__/builds_index.js"/>
+<div id="box-left-tabs" class="box box-padding">
+    <!-- box / title -->
+    <div class="title">
+        <h5>测试版本</h5>
+        <ul class="links" id="link_list">
+            <li class="head_tab_select ui-tabs-selected" t="1"><a href="javascript:void(0);">版本列表</a></li>
+            <li class="head_tab_select" t="2"><a href="javascript:void(0);">上传版本</a></li>
+        </ul>
+    </div>
+    <!-- end box / title -->
+    <div class="table" id="build_list" style="display: block;">
+    </div>
+    <div class="table" align="center" id="build_add" style="display: none;">
+        <form method="post" action="__APP__/Builds/Upload" enctype="multipart/form-data">
+            <table style="width:600px;margin:5px;border-collapse:collapse;border:none;border: 1px;">
+                <tr>
+                    <td>评测类型</td>
+                    <td><select name="tType" id="tType">
+                        <option value="AVC_OEM" selected="selected">AVC_OEM</option>
+                        <option value="AVC_SelfPower">AVC_SelfPower</option>
+                        <option value="AVT_OEM">AVT_OEM</option>
+                        <option value="AVT_SelfPower">AVT_SelfPower</option>
+                        <option value="VB_OEM">VB_OEM</option>
+                        <option value="VB_SelfPower">VB_SelfPower</option>
+                    </select></td>
+                </tr>
+                <tr>
+                    <td>评测版本</td>
+                    <td>
+                        <input type="file" name="file" id="file" accept="application/*" />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:center" colspan="2"><input type="submit" id="add_btn" value="上传版本">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>

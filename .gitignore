@@ -1,0 +1,11 @@
+#thinkphp common folder
+Common/
+Conf/
+Lang/
+Runtime/
+Thinkphp/
+Public/Css/jquery
+Public/JS/ui
+Public/images/
+upload/
+index.php

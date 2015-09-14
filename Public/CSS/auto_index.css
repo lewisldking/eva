@@ -1,0 +1,20 @@
+
+#container table{
+    width: 0;
+}
+.mouseover{
+	background-color: #ffff66;
+	cursor:pointer;
+}
+table th{
+	background-color: #defede;
+}
+table tr{
+	background-color: #d4e3e5;
+}
+.job th{
+	background-color: #fffcef;
+}
+.job td{
+	background-color: #c8ffa6;
+}

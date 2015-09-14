@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Frame index</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <load href="__CSS__/style.css"/>
+    <load href="__JS__/jquery-1.11.2.js"/>
+    <load href="__JS__/frame.js"/>
+</head>
+<body>
+<!-- header -->
+<include file="./Tpl/Frame/header.html"/>
+<!-- end header -->
+
+<!-- content -->
+<div id="content">
+    <!-- end content / left -->
+    <div id="left">
+        <include file="./Tpl/Frame/left.html"/>
+    </div>
+    <!-- end content / left -->
+    <!-- content / right -->
+    <div id="right" style="margin-bottom:5px">
+        <iframe id="frame_content_show" src="__APP__/Frame/welcome" frameborder="0" marginheight="0" marginwidth="0"
+                frameborder="0" scrolling="auto" height="700" name="frame_content_show" width="100%"
+                style="minHeight:600px"></iframe>
+    </div>
+    <!-- end content / right -->
+</div>
+<!-- end content -->
+</body>
+</html>

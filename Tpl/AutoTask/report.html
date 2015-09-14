@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>国外测试机自动化测试状态展示页面</title>
+    <script type="text/javascript" src="/eva/Public/JS/jquery.js"></script>
+	<script type="text/javascript" src="/eva/Public/JS/jquery.flot.js"></script>
+	<script type="text/javascript" src="/eva/Public/JS/jquery.flot.pie.js"></script>
+    <script type="text/javascript" src="/eva/Public/JS/autotask_report.js"></script>
+	<link href="/eva/Public/CSS/auto_report.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div align="center">
+    <H2>国外测试机自动化测试状态展示页面</H2>
+</div>
+<div style="margin:30px 5% 0 5%;">
+    <div style="padding-top:10px; clear:both;" align="center">
+        <label for="date">日期:</label>
+        <select name="date" id="date">
+            <option value="7">最近一周</option>
+			<option value="30">最近一个月</option>
+			<option value="90">最近三个月</option>
+			<option value="0">全部</option>
+        </select>
+        <input type="button" id="search" value="查看"/>
+    </div>
+	<div style="margin:10px auto; width:850px;">
+		<H3>自动化监控任务统计图</H3>
+	</div>
+    <div id="report_pie">
+
+    </div>
+</div>
+</body>
+</html>

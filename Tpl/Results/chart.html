@@ -1,0 +1,44 @@
+<load href="__JS__/results_chart.js"/>
+<load href="__JS__/jquery.flot.js"/>
+<load href="__JS__/jquery.flot.categories.js"/>
+<load href="__CSS__/flot.css"/>
+<div id="box-left-tabs" class="box box-padding">
+    <!-- box / title -->
+    <div class="title">
+        <h5>结果管理</h5>
+        <ul class="links" id="link_list">
+            <li class="head_tab_select ui-tabs-selected" t="1"><a>结果展示</a></li>
+            <li class="head_tab_select" t="2"><a href="javascript:void(0);">上传干净系统结果</a></li>
+        </ul>
+    </div>
+    <!-- end box / title -->
+    <div class="table" id="result_list" style="display: block;">
+        <div align="center">
+
+            <p>
+                测试版本性能结果趋势
+            </p>
+
+            <p>
+                <label style="margin-left: 10px;">评测类型:</label>
+                <select name="av_type" id="chart_av_type">
+                    <option value="AVC_OEM" selected="selected">AVC_OEM</option>
+                    <option value="AVC_SelfPower">AVC_SelfPower</option>
+                    <option value="AVT_OEM">AVT_OEM</option>
+                    <option value="AVT_SelfPower">AVT_SelfPower</option>
+                </select>
+                <label style="margin-left: 10px;">测试系统:</label>
+                <select name="evaluate_type" id="chart_os_type">
+                </select>
+                <input type="button" class="search_btn" id="chart_btn" value="显示趋势图"
+                       style="margin-left: 20px;">
+            </p>
+            <div id="container" style="width: 95%">
+                <!--<div id="legend_CopyFiles"></div>-->
+                <!--<div id="placeholder_CopyFiles" style="width: 80%; height: 300px;"></div>-->
+            </div>
+        </div>
+    </div>
+
+
+</div>

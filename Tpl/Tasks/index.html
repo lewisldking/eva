@@ -1,0 +1,55 @@
+<load href="__JS__/tasks_index.js"/>
+<div id="box-left-tabs" class="box box-padding">
+    <!-- box / title -->
+    <div class="title">
+        <h5>测试任务</h5>
+        <ul class="links" id="link_list">
+            <li class="head_tab_select ui-tabs-selected" t="1"><a href="javascript:void(0);">展示</a></li>
+            <li class="head_tab_select" t="2"><a href="javascript:void(0);">创建任务</a></li>
+        </ul>
+    </div>
+    <!-- end box / title -->
+    <div id="tasks_show" style="display: block;">
+        <p>
+            <label for="bType" style="margin-left: 10px;">测试版本类型:</label>
+            <select name="bType" id="bType">
+                <option value="1" selected="selected">All</option>
+                <option value="AVC_OEM">AVC_OEM</option>
+                <option value="AVC_SelfPower">AVC_SelfPower</option>
+                <option value="AVT_OEM">AVT_OEM</option>
+                <option value="AVT_SelfPower">AVT_SelfPower</option>
+            </select>
+        </p>
+        <div id="tasks_list" >
+        </div>
+    </div>
+    <div  id="create_tasks" style="display: none;" align="center" class="table">
+        <form id="create_task_form" method="post" action="__APP__/Tasks/CreateTasks">
+            <table style="width:600px;margin:5px;border-collapse:collapse;border:none;border: 1px;">
+                <tr>
+                    <td>评测类型</td>
+                    <td><select name="tType" id="tType">
+                        <option value="AVC_OEM" selected="selected">AVC_OEM</option>
+                        <option value="AVC_SelfPower">AVC_SelfPower</option>
+                        <option value="AVT_OEM">AVT_OEM</option>
+                        <option value="AVT_SelfPower">AVT_SelfPower</option>
+                        <option value="VB_OEM">VB_OEM</option>
+                        <option value="VB_SelfPower">VB_SelfPower</option>
+                    </select></td>
+                </tr>
+                <tr>
+                    <td>评测版本</td>
+                    <td><select name="tBuild" id="tBuild"></select></td>
+                </tr>
+                <tr>
+                    <td>测试机器</td>
+                    <td><select name="tMachine" id="tMachine"></select></td>
+                </tr>
+                <tr>
+                    <td style="text-align:center" colspan="2"><input type="submit" id="create_task_btn" value="创建任务">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
