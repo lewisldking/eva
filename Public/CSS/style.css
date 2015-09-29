@@ -2046,7 +2046,7 @@ div.box table
 div.box table th
 {
 	padding: 10px;
-	background: #eeeeee;
+    background-color: #defede;
 	border-right: 1px solid #cdcdcd;
 	border-bottom: 1px solid #cdcdcd;
 }
@@ -2085,7 +2085,7 @@ div.box table th.selected input
 div.box table td
 {
 	padding: 10px;
-	background: #ffffff;
+	/*background: #ffffff;*/
     border: 1px solid #cdcdcd;
 	/*border-right: 1px solid #cdcdcd;*/
 	/*border-bottom: 1px solid #cdcdcd;*/

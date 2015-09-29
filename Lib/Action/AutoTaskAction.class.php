@@ -13,7 +13,7 @@ class AutoTaskAction extends Action {
     }
     public function Index()
     {
-        $this->show('./Tpl/AutoTask/index.html');
+       $this->showTemplate('./Tpl/AutoTask/index.html');
     }
 	public function Report()
     {
@@ -36,7 +36,7 @@ class AutoTaskAction extends Action {
             }
         }
         else{
-            $this->ajaxReturn("", "input args are wrong, need: ts,tn", -1);
+            $this->ajaxReturn("-1", "input args are wrong, need: ts,tn", -1);
         }
     }
 	public function EndJobApi()
@@ -109,9 +109,33 @@ class AutoTaskAction extends Action {
         if(isset($_GET['dt']) && !empty($_GET['dt']))
         {
             $DateTime = $_GET['dt'];
+
             $oAutoTaskModel = new AutoTaskModel();
+
             $aDateResults = $oAutoTaskModel->getStatusList($DateTime);
-			
+
+
+           if($aDateResults){
+                $this->ajaxReturn($aDateResults, "", 1);
+            }else{
+                $this->ajaxReturn($aDateResults, "return value is wrong,date:{DateTime}", -2);
+            }
+        }
+        else{
+            $this->ajaxReturn("", "input args are wrong, need: sts,ets,tr,tv", -1);
+        }
+    }
+
+    public function getFailList()
+    {
+        if(isset($_GET['dt']) && !empty($_GET['dt']))
+        {
+            $DateTime = $_GET['dt'];
+
+            $oAutoTaskModel = new AutoTaskModel();
+
+            $aDateResults = $oAutoTaskModel->getFailList($DateTime);
+
             if($aDateResults){
                 $this->ajaxReturn($aDateResults, "", 1);
             }else{
@@ -122,7 +146,7 @@ class AutoTaskAction extends Action {
             $this->ajaxReturn("", "input args are wrong, need: sts,ets,tr,tv", -1);
         }
     }
-	
+
 	public function getReportDataByDays()
 	{
 		if(isset($_GET['days']) &&  is_numeric($_GET['days'])){

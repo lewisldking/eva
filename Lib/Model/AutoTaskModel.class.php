@@ -10,7 +10,7 @@ class AutoTaskModel extends Model
 {
     public function __construct()
     {
-        $this->db(1, "mysql://root:`1qaz@localhost:3306/test");
+        $this->db(1, "mysql://root:root@192.168.1.61:3306/test");
         $this->trueTableName = "tbl_autotasks";
     }
 

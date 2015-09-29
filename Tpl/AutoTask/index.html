@@ -1,27 +1,37 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>国外测试机自动化测试状态展示页面</title>
-    <script type="text/javascript" src="/eva/Public/JS/jquery-1.11.2.js"></script>
-    <script type="text/javascript" src="/eva/Public/JS/autotask_index.js"></script>
-	<link href="/eva/Public/CSS/auto_index.css" rel="stylesheet" type="text/css">
-</head>
-<body>
-<div align="center">
-    <H2>国外测试机自动化测试状态展示页面</H2>
-</div>
-<div style="margin:30px 5% 0 5%;">
-    <div style="padding-top:10px; clear:both;" align="center">
-        <label for="date">日期:</label>
-        <select name="date" id="date">
-            <option value="test">test</option>
-        </select>
-        <input type="button" id="search" value="查看"/>
+<load href="__JS__/autotask_index.js"/>
+<load href="__JS__/jquery-1.11.2.js"/>
+<load href="__CSS__/auto_index.css" />
+<div class="box">
+    <!-- box / title -->
+    <div class="title">
+        <h5>监控</h5>
+        <ul class="links" id="link_list">
+            <li class="head_tab_select ui-tabs-selected" t="1"><a href="javascript:void(0);">监控列表</a></li>
+            <li class="head_tab_select" t="2"><a href="javascript:void(0);">Fail列表</a></li>
+        </ul>
     </div>
-    <div style="padding:0 40px;margin-top:20px; " id="statsList">
+    <!-- end box / title -->
 
+    <div align="center">
+        <H2>国外测试机自动化测试状态展示页面</H2>
+    </div>
+    <div style="margin:30px 1% 0 1%;">
+        <div style="padding-top:10px; clear:both;" align="center">
+            <label for="date">日期:</label>
+            <select name="date" id="date">
+                <option value="test">test</option>
+            </select>
+            <input type="button" id="search" value="查看"/>
+        </div>
+        <div id="mor_list" style="display: block;">
+            <div style="padding:0 10px;margin-top:10px; " id="statsList">
+
+            </div>
+        </div>
+    </div>
+    <div  id="fail_list" style="display: none;">
+        <div style="padding:0 10px;margin-top:10px; " id="failList">
+
+        </div>
     </div>
 </div>
-</body>
-</html>
