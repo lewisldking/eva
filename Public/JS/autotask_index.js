@@ -4,11 +4,24 @@
 $(document).ready(function () {
     getDateList();
     getStatusList();
-	
-    $("#search").bind("click", function () {
-        getStatusList();		
+    $(".head_tab_select").bind("click",function(){
+        $("#link_list li").removeClass("ui-tabs-selected");
+        $(this).addClass("ui-tabs-selected");
+        var select = $("#link_list .ui-tabs-selected").attr("t");
+        if (select == 2) {
+            $("#fail_list").show();
+            $("#mor_list").hide();
+            getStatusList();
+        } else {
+            $("#fail_list").hide();
+            $("#mor_list").show();
+            getStatusList();
+        }
     });
 
+    $("#search").bind("click", function () {
+        getStatusList();
+    });
 });
 
 function getDateList() {
@@ -39,6 +52,11 @@ function BindDateList(obj) {
 function getStatusList(){
     var datetime = $("#date").val();
     var url = "getStatusList";
+    var temp= $("#fail_list").is(":hidden");//是否隐藏
+    if(temp==true)
+        url="getStatusList";
+    else
+        url="getFailList";
     $.get(url,
         {'dt': datetime},
         function (obj) {
@@ -49,7 +67,7 @@ function getStatusList(){
 }
 function BindStatusList(obj){
  var data = obj.data;
-    var html = '<table style="border-collapse: collapse;width: 90%; font-size:11pt; " border="1px" align="center"><tr><th width="25%">测试名称</th><th width="15%">开始时间</th><th width="15%">完成时间</th><th width="15%">测试结果</th><th width="15%">状态</th><th width="15%">任务说明</th></tr>';
+    var html = '<table border="1px" align="center"><tr><th width="25%">测试名称</th><th width="15%">开始时间</th><th width="15%">完成时间</th><th width="15%">测试结果</th><th width="15%">状态</th><th width="15%">任务说明</th></tr>';
     if (data != null && data.length > 0) {
         var temp_task_id = 0;
         for (var key in data) {
@@ -91,7 +109,11 @@ function BindStatusList(obj){
         html += '<tr><td colspan="5" style="text-align:center;matrix:20px">无数据</td></tr>';
     }
     html += '</table>';
-    $("#statsList").html(html);
+    var temp= $("#fail_list").is(":hidden");//是否隐藏
+    if(temp==true)
+        $("#statsList").html(html);
+    else
+        $("#failList").html(html);
 	
 	$(".job").hide();
 	

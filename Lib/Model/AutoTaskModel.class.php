@@ -10,7 +10,7 @@ class AutoTaskModel extends Model
 {
     public function __construct()
     {
-        $this->db(1, "mysql://root:`1qaz@localhost:3306/test");
+        $this->db(1, "mysql://root:root@192.168.1.61:3306/test");
         $this->trueTableName = "tbl_autotasks";
     }
 
@@ -54,7 +54,15 @@ EOM;
 		//echo $aQuery;
         return $this->db(1)->query($aQuery);
     }
-	
+
+    public function getFailList($datetime){
+        $aQuery = <<<EOM
+SELECT * FROM `test`.`tbl_autotasks` LEFT JOIN `tbl_autojob` on `f_atid` = atid WHERE substring_index(`atstarttime`, '_', 1) = {$datetime} AND tresult = 'failed' ORDER BY atid DESC
+EOM;
+        //echo $aQuery;
+        return $this->db(1)->query($aQuery);
+    }
+
 	public function getReportDatabyDays($days)
 	{
 		if((int)$days == 0)
